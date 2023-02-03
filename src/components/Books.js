@@ -13,9 +13,6 @@ export default function Books() {
           <li key={book.title + book.autor}>
             <Book title={book.title} author={book.author} />
 
-            <button className="remove" type="button">
-              remove
-            </button>
           </li>
         ))}
       </ul>
