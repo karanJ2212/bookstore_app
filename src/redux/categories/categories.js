@@ -1,5 +1,5 @@
 // Action type for checking the status
-const CHECK_STATUS = 'CHECK_STATUS';
+const CHECK_STATUS = 'redux/categories/categories/CHECK_STATUS';
 
 // Initial state
 const initialState = {

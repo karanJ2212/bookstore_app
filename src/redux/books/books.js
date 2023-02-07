@@ -1,6 +1,6 @@
 // Action Types
-const ADD_BOOK = 'ADD_BOOK';
-const REMOVE_BOOK = 'REMOVE_BOOK';
+const ADD_BOOK = 'redux/books/books/ADD_BOOK';
+const REMOVE_BOOK = 'redux/books/books/REMOVE_BOOK';
 
 // Initial State
 const initialState = {
