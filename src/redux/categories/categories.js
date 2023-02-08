@@ -3,7 +3,6 @@ const CHECK_STATUS = 'redux/categories/categories/CHECK_STATUS';
 
 // Initial state
 const initialState = {
-  categories: [],
   status: '',
 };
 

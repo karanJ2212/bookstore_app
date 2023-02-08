@@ -1,33 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
-const Book = ({ title, author }) => (
+const Book = ({ title, author, id }) => {
+  const dispatch = useDispatch();
 
-  <div className="book">
-    <div className="book-content">
-      <div className="book-info">
-        <h2 className="book-title">{title}</h2>
-        <h6 className="book-author">{author}</h6>
-        <div className="action-buttons">
-          <button className="button-outline" type="button">
-            Comments
-          </button>
-          <button className="button-outline" type="button">
-            remove
-          </button>
+  const handleRemove = () => {
+    dispatch(removeBook(id));
+  };
 
-          <button className="button-outline" type="button">
-            Edit
-          </button>
+  return (
+    <div className="book">
+      <div className="book-content">
+        <div className="book-info">
+          <h2 className="book-title">{title}</h2>
+          <h6 className="book-author">{author}</h6>
+          <div className="action-buttons">
+            <button className="button-outline" type="button">
+              Comments
+            </button>
+            <button className="button-outline" type="button" onClick={handleRemove}>
+              Remove
+            </button>
+            <button className="button-outline" type="button">
+              Edit
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default Book;

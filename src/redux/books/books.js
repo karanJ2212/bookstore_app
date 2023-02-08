@@ -3,11 +3,22 @@ const ADD_BOOK = 'redux/books/books/ADD_BOOK';
 const REMOVE_BOOK = 'redux/books/books/REMOVE_BOOK';
 
 // Initial State
+
 const initialState = {
-  books: [],
+  books: [
+    {
+      title: 'To Kill a Mockingbird', author: 'Harper Lee', id: 1,
+    },
+    {
+      title: 'Pride and Prejudice', author: 'Jane Austen', id: 2,
+    },
+    {
+      title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', id: 3,
+    },
+  ],
 };
 
-// Action Creators
+// // Action Creators
 export const addBook = (book) => ({
   type: ADD_BOOK,
   book,
