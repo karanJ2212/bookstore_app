@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { v4 as uuid } from 'uuid';
 import { addBook } from '../redux/books/books';
 
 export default function AddBook() {
   const dispatch = useDispatch();
-  const [book, setBook] = useState({ title: '', author: '' });
+  const [book, setBook] = useState({ title: '', author: '', category: '' });
 
   const handleChange = (event) => {
     setBook({ ...book, [event.target.name]: event.target.value });
@@ -12,9 +13,10 @@ export default function AddBook() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newBook = { id: Date.now(), ...book };
+    const newBook = { item_id: uuid(), ...book };
+
     dispatch(addBook(newBook));
-    setBook({ title: '', author: '' });
+    setBook({ title: '', author: '', category: '' });
   };
 
   return (
