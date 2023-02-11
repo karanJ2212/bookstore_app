@@ -10,13 +10,17 @@ function App() {
   return (
     <>
       <Router>
-        <Nav />
-        <Routes>
-          <Route exact path="/" element={<Books />} />
+        <div className="App">
 
-          <Route path="/Category" element={<Category />} />
-        </Routes>
+          <Nav />
+          <main className="container">
+            <Routes>
+              <Route exact path="/" element={<Books />} />
 
+              <Route path="/Category" element={<Category />} />
+            </Routes>
+          </main>
+        </div>
       </Router>
     </>
   );

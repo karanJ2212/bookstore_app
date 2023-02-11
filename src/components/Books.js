@@ -15,17 +15,16 @@ export default function Books() {
 
   return (
 
-    <div className="bookContainer">
-      <ul className="booklist">
+    <section className="bookContainer">
 
-        {books.map((book) => (
-          <li key={book.title + book.author}>
+      {books.map((book) => (
+        <li key={book.title + book.author}>
 
-            <Book title={book.title} author={book.author} id={book.id} />
-          </li>
-        ))}
-      </ul>
+          <Book title={book.title} author={book.author} id={book.id} />
+        </li>
+      ))}
+      <p className="section-divider" />
       <Addbook />
-    </div>
+    </section>
   );
 }
